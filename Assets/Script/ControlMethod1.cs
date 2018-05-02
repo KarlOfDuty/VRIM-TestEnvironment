@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class ControlMethod1 : MonoBehaviour
 {
-
     private SteamVR_TrackedObject trackedObj;
 
     private GameObject collidingObject;
     private GameObject objectInHand;
+
+    private LinkedList<GameObject> array;
+
+    public ApplicationController applicationController;
 
     private SteamVR_Controller.Device Controller
     {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
     }
 
-    void Awake()
+    private void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
@@ -57,6 +60,7 @@ public class ControlMethod1 : MonoBehaviour
         var joint = AddFixedJoint();
         joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
     }
+
     private void ReleaseObject()
     {
         if (GetComponent<FixedJoint>())
@@ -69,6 +73,7 @@ public class ControlMethod1 : MonoBehaviour
         }
         objectInHand = null;
     }
+
     private FixedJoint AddFixedJoint()
     {
         FixedJoint fx = gameObject.AddComponent<FixedJoint>();
@@ -76,21 +81,36 @@ public class ControlMethod1 : MonoBehaviour
         fx.breakTorque = 20000;
         return fx;
     }
-    // Update is called once per frame
-    void Update ()
+
+    private void Update()
     {
         if (Controller.GetHairTriggerDown())
         {
+            float distance = Vector3.Distance(GetComponent<SphereCollider>().transform.position, applicationController.currentCube.transform.position);
+            //Collider coll = GetComponent<SphereCollider>();
+            //coll.bounds
             if (collidingObject)
             {
+                if (collidingObject == applicationController.currentCube)
+                {
+                    applicationController.LogCorrectObject(distance);
+                }
+                else
+                {
+                    applicationController.LogWrongObject(distance);
+                }
                 GrabObject();
             }
+            else
+            {
+                applicationController.LogMissedObject(distance);
+            }
         }
-
-        if (Controller.GetHairTriggerUp())
+        else if (Controller.GetHairTriggerUp())
         {
             if (objectInHand)
             {
+                applicationController.LogDroppedObject();
                 ReleaseObject();
             }
         }

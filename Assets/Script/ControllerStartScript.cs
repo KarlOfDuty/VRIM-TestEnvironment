@@ -20,8 +20,9 @@ public class ControllerStartScript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Controller.GetHairTriggerDown())
+        if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
+            print("hello");
             applicationController.StartTest();
             Destroy(gameObject.GetComponent<ControllerStartScript>());
         }
