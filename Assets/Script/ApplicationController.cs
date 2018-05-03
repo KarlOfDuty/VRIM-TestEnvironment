@@ -22,11 +22,7 @@ public class ApplicationController : MonoBehaviour
 
     public bool testEnded = false;
 
-    private float timeLastCubeRemoved = 0.0f;
-    private float timeLastMissedPickup = 0.0f;
-    private float timeLastWrongPickup = 0.0f;
-    private float timeLastSuccessfulPickup = 0.0f;
-    private float timeLastDroppedCube = 0.0f;
+    private float timeLastSuccessfulPlacement = 0.0f;
 
     private int numberOfMissedPickups = 0;
     private int numberOfWrongPickups = 0;
@@ -48,7 +44,6 @@ public class ApplicationController : MonoBehaviour
         {
             SetRandomCube();
             WriteLineToLog("Test Started. ID: " + logID + ". Scene: " + sceneName + ".");
-            timeLastCubeRemoved = Time.time;
             testStarted = true;
         }
     }
@@ -75,8 +70,8 @@ public class ApplicationController : MonoBehaviour
 
     public void DeleteCurrentCube()
     {
-        WriteLineToLog("Cube successfully placed in target. " + (Time.time - timeLastCubeRemoved) + "s since last cube placed.");
-        timeLastCubeRemoved = Time.time;
+        WriteLineToLog("Cube successfully placed in target. " + (Time.time - timeLastSuccessfulPlacement) + "s since last cube successfully placed.");
+        timeLastSuccessfulPlacement = Time.time;
 
         currentCube.transform.parent = null;
         Destroy(currentCube, 1.0f);
@@ -121,7 +116,6 @@ public class ApplicationController : MonoBehaviour
         {
             numberOfMissedPickups++;
             WriteLineToLog("User tried to pick up an object but missed. Distance to center of correct object: " + distanceToCorrectObject);
-            timeLastMissedPickup = Time.time;
         }
     }
 
@@ -131,7 +125,6 @@ public class ApplicationController : MonoBehaviour
         {
             numberOfWrongPickups++;
             WriteLineToLog("User picked up wrong object. Distance to center of correct object: " + distanceToCorrectObject);
-            timeLastWrongPickup = Time.time;
         }
     }
 
@@ -141,7 +134,6 @@ public class ApplicationController : MonoBehaviour
         {
             numberOfSuccessfulPickups++;
             WriteLineToLog("User picked up the correct object. Distance to center of correct object: " + distanceToCorrectObject);
-            timeLastSuccessfulPickup = Time.time;
         }
     }
 
@@ -150,7 +142,14 @@ public class ApplicationController : MonoBehaviour
         if (testStarted)
         {
             WriteLineToLog("User released an object.");
-            timeLastDroppedCube = Time.time;
+        }
+    }
+
+    public void LogAttemptedDrop()
+    {
+        if (testStarted)
+        {
+            WriteLineToLog("User tried to drop an object but was not holding one.");
         }
     }
 }

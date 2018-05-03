@@ -4,32 +4,24 @@ using UnityEngine;
 
 public class ControlMethod1 : MonoBehaviour
 {
-    private SteamVR_TrackedObject trackedObj;
-
-    private GameObject collidingObject;
-    private GameObject objectInHand;
-
-    private LinkedList<GameObject> array;
-
     public ApplicationController applicationController;
+
+    private SteamVR_TrackedObject trackedObj;
 
     private SteamVR_Controller.Device Controller
     {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
     }
 
+    public float closestColliderDistance = 5000.0f;
+    public Collider closestCollider;
+    public SphereCollider thisCollider;
+    public GameObject objectInHand;
+
     private void Awake()
     {
+        thisCollider = GetComponent<SphereCollider>();
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-    }
-
-    private void SetCollidingObject(Collider col)
-    {
-        if (collidingObject || !col.GetComponent<Rigidbody>())
-        {
-            return;
-        }
-        collidingObject = col.gameObject;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -42,36 +34,26 @@ public class ControlMethod1 : MonoBehaviour
         SetCollidingObject(other);
     }
 
-    public void OnTriggerExit(Collider other)
+    private void SetCollidingObject(Collider other)
     {
-        if (!collidingObject)
+        if (!other.GetComponent<Rigidbody>())
         {
             return;
         }
 
-        collidingObject = null;
-    }
-
-    private void GrabObject()
-    {
-        objectInHand = collidingObject;
-        collidingObject = null;
-
-        var joint = AddFixedJoint();
-        joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
-    }
-
-    private void ReleaseObject()
-    {
-        if (GetComponent<FixedJoint>())
+        if (closestColliderDistance > Vector3.Distance(other.transform.position, thisCollider.transform.TransformPoint(thisCollider.center)))
         {
-            GetComponent<FixedJoint>().connectedBody = null;
-            Destroy(GetComponent<FixedJoint>());
-
-            objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity;
-            objectInHand.GetComponent<Rigidbody>().angularVelocity = Controller.angularVelocity;
+            closestCollider = other;
         }
-        objectInHand = null;
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (closestCollider == other)
+        {
+            closestCollider = null;
+            closestColliderDistance = 50000.0f;
+        }
     }
 
     private FixedJoint AddFixedJoint()
@@ -86,12 +68,11 @@ public class ControlMethod1 : MonoBehaviour
     {
         if (Controller.GetHairTriggerDown())
         {
-            float distance = Vector3.Distance(GetComponent<SphereCollider>().transform.position, applicationController.currentCube.transform.position);
-            //Collider coll = GetComponent<SphereCollider>();
-            //coll.bounds
-            if (collidingObject)
+            float distance = Vector3.Distance(thisCollider.transform.TransformPoint(thisCollider.center), applicationController.currentCube.transform.position);
+
+            if (closestCollider)
             {
-                if (collidingObject == applicationController.currentCube)
+                if (closestCollider == applicationController.currentCube)
                 {
                     applicationController.LogCorrectObject(distance);
                 }
@@ -114,5 +95,33 @@ public class ControlMethod1 : MonoBehaviour
                 ReleaseObject();
             }
         }
+    }
+
+    private void GrabObject()
+    {
+        objectInHand = closestCollider.gameObject;
+        closestCollider = null;
+
+        var joint = AddFixedJoint();
+        joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
+    }
+
+    private void ReleaseObject()
+    {
+        if (GetComponent<FixedJoint>())
+        {
+            GetComponent<FixedJoint>().connectedBody = null;
+            Destroy(GetComponent<FixedJoint>());
+
+            objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity;
+            objectInHand.GetComponent<Rigidbody>().angularVelocity = Controller.angularVelocity;
+        }
+        objectInHand = null;
+    }
+
+    private void LateUpdate()
+    {
+        closestColliderDistance = 50000.0f;
+        closestCollider = null;
     }
 }
