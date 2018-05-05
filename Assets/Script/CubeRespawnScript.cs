@@ -11,4 +11,12 @@ public class CubeRespawnScript : MonoBehaviour
     {
         startPos = transform.position;
     }
+
+    private void Update()
+    {
+        if (transform.position.y < -1.0f)
+        {
+            transform.position = startPos;
+        }
+    }
 }

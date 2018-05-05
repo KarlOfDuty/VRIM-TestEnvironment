@@ -22,7 +22,6 @@ public class ControllerStartScript : MonoBehaviour
     {
         if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
-            print("hello");
             applicationController.StartTest();
             Destroy(gameObject.GetComponent<ControllerStartScript>());
         }

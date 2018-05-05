@@ -229,3 +229,77 @@
 [5/4/2018 1:41:13 AM] (49.97902s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
 [5/4/2018 1:42:15 AM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
 [5/4/2018 1:42:39 AM] (23.66269s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 7:09:28 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 7:09:30 PM] (2.67525s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 8:29:48 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:31:14 PM] (84.56397s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 8:31:21 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:31:47 PM] (25.13207s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 8:32:33 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:33:02 PM] (29.11119s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 8:33:25 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:33:47 PM] (22.51629s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 8:35:12 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:35:41 PM] (28.65242s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 8:36:00 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:36:19 PM] (18.76728s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 8:38:29 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:45:09 PM] (400.0365s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 8:52:08 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:54:12 PM] (122.4915s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 8:54:28 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:55:34 PM] (66.08743s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 8:55:58 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:56:01 PM] (3.657641s): Test Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 8:56:12 PM] (14.53043s): User tried to pick up an object but missed. Distance to center of correct object: 0.2733114
+[5/5/2018 8:56:13 PM] (15.1113s): User tried to pick up an object but missed. Distance to center of correct object: 0.2656181
+[5/5/2018 8:56:13 PM] (15.96009s): User picked up wrong object. Distance to center of correct object: 0.2612752
+[5/5/2018 8:56:14 PM] (16.60808s): User released an object.
+[5/5/2018 8:56:15 PM] (17.3676s): User picked up wrong object. Distance to center of correct object: 0.2698817
+[5/5/2018 8:56:15 PM] (17.90362s): User released an object.
+[5/5/2018 8:56:21 PM] (23.77882s): User picked up wrong object. Distance to center of correct object: 0.455423
+[5/5/2018 8:56:26 PM] (28.71579s): User released an object.
+[5/5/2018 8:56:28 PM] (30.5698s): User picked up wrong object. Distance to center of correct object: 0.4726481
+[5/5/2018 8:56:47 PM] (49.69194s): User released an object.
+[5/5/2018 8:56:47 PM] (49.7591s): User tried to pick up an object but missed. Distance to center of correct object: 0.9433374
+[5/5/2018 8:56:52 PM] (54.6067s): User picked up wrong object. Distance to center of correct object: 0.2819942
+[5/5/2018 8:57:05 PM] (67.87603s): User released an object.
+[5/5/2018 8:57:07 PM] (69.33367s): User tried to pick up an object but missed. Distance to center of correct object: 0.9445333
+[5/5/2018 8:57:07 PM] (69.57346s): User tried to pick up an object but missed. Distance to center of correct object: 0.9456114
+[5/5/2018 8:57:08 PM] (69.97554s): User tried to pick up an object but missed. Distance to center of correct object: 0.9492872
+[5/5/2018 8:57:08 PM] (70.64577s): User tried to pick up an object but missed. Distance to center of correct object: 0.9476115
+[5/5/2018 8:57:38 PM] (100.3468s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 5. Number of missed pickups: 7
+[5/5/2018 9:34:19 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 9:34:26 PM] (7.627847s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 9:34:39 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 9:38:26 PM] (226.595s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 9:38:32 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 9:38:33 PM] (0.8786502s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 9:39:01 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 9:40:57 PM] (115.079s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 9:41:05 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 9:42:44 PM] (99.40771s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 9:42:47 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 9:43:23 PM] (36.04518s): Test Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 9:43:27 PM] (39.82029s): User picked up wrong object. Distance to center of correct object: 0.5086989
+[5/5/2018 9:43:28 PM] (40.64682s): User released an object.
+[5/5/2018 9:43:36 PM] (48.69005s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 1. Number of missed pickups: 0
+[5/5/2018 9:43:38 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 9:43:47 PM] (8.985161s): Test Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 9:43:48 PM] (9.812464s): User picked up wrong object. Distance to center of correct object: 0.6669077
+[5/5/2018 9:43:49 PM] (10.43731s): User released an object.
+[5/5/2018 9:43:56 PM] (17.76564s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 1. Number of missed pickups: 0
+[5/5/2018 10:00:05 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 10:00:37 PM] (32.5409s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 10:01:42 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 10:01:55 PM] (12.99758s): Test Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 10:02:01 PM] (19.09617s): User picked up wrong object. Distance to center of correct object: 0.1334774
+[5/5/2018 10:02:04 PM] (21.86609s): User released an object.
+[5/5/2018 10:02:04 PM] (22.06711s): User tried to pick up an object but missed. Distance to center of correct object: 0.1578354
+[5/5/2018 10:02:12 PM] (30.19991s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 1. Number of missed pickups: 1
+[5/5/2018 10:34:28 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 10:34:30 PM] (1.167792s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 10:34:47 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 10:38:21 PM] (213.6939s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/5/2018 10:39:38 PM] (0s): Application Started. ID: 0001. Scene: InteractionMethod1Large.
+[5/5/2018 10:42:08 PM] (150.3574s): Test Aborted. ID: 0001. Scene: InteractionMethod1Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
