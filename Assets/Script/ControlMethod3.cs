@@ -46,8 +46,8 @@ public class ControlMethod3 : MonoBehaviour
     private FixedJoint AddFixedJoint()
     {
         FixedJoint fx = gameObject.AddComponent<FixedJoint>();
-        fx.breakForce = 20000;
-        fx.breakTorque = 20000;
+        fx.breakForce = 1000;
+        fx.breakTorque = 1000;
         return fx;
     }
 

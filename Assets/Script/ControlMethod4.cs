@@ -4,12 +4,20 @@ public class ControlMethod4 : MonoBehaviour
 {
     public ApplicationController applicationController;
 
-    public GameObject testObject;
-    private SteamVR_TrackedObject trackedObj1;
+    public GameObject leftControllerObject;
+    private SteamVR_TrackedObject _trackedObj1;
 
-    private SteamVR_Controller.Device Controller1
+    private SteamVR_Controller.Device LeftController
     {
-        get { return SteamVR_Controller.Input((int)trackedObj1.index); }
+        get { return SteamVR_Controller.Input((int)_trackedObj1.index); }
+    }
+
+    public GameObject rightControllerObject;
+    private SteamVR_TrackedObject _trackedObj2;
+
+    private SteamVR_Controller.Device RightController
+    {
+        get { return SteamVR_Controller.Input((int)_trackedObj2.index); }
     }
 
     public GameObject laserPrefab;
@@ -20,7 +28,8 @@ public class ControlMethod4 : MonoBehaviour
 
     private void Start()
     {
-        trackedObj1 = testObject.GetComponent<SteamVR_TrackedObject>();
+        _trackedObj1 = leftControllerObject.GetComponent<SteamVR_TrackedObject>();
+        _trackedObj2 = rightControllerObject.GetComponent<SteamVR_TrackedObject>();
         _laser = Instantiate(laserPrefab);
     }
 
@@ -43,8 +52,8 @@ public class ControlMethod4 : MonoBehaviour
     private FixedJoint AddFixedJoint()
     {
         FixedJoint fx = gameObject.AddComponent<FixedJoint>();
-        fx.breakForce = 20000;
-        fx.breakTorque = 20000;
+        fx.breakForce = 1000;
+        fx.breakTorque = 1000;
         return fx;
     }
 
@@ -56,7 +65,7 @@ public class ControlMethod4 : MonoBehaviour
         {
             _hitPoint = hit.point;
             ShowLaser(hit);
-            if ((Controller1.GetHairTriggerDown() /*|| Controller2.GetHairTriggerDown()*/) && !heldGameObject && hit.collider.gameObject.GetComponent<Rigidbody>())
+            if ((LeftController.GetHairTriggerDown() || RightController.GetHairTriggerDown()) && !heldGameObject && hit.collider.gameObject.GetComponent<Rigidbody>())
             {
                 if (applicationController.currentCube == hit.collider.gameObject)
                 {
@@ -68,14 +77,14 @@ public class ControlMethod4 : MonoBehaviour
                 }
                 GrabObject(hit.collider.gameObject);
             }
-            else if ((Controller1.GetHairTriggerDown() /*|| Controller2.GetHairTriggerDown()*/) && !heldGameObject)
+            else if ((LeftController.GetHairTriggerDown() || RightController.GetHairTriggerDown()) && !heldGameObject)
             {
                 applicationController.LogMissedObject(-1.0f);
             }
         }
 
         //Releasing an object
-        if ((Controller1.GetHairTriggerUp() /*|| Controller2.GetHairTriggerUp()*/) && heldGameObject)
+        if ((LeftController.GetHairTriggerUp() || RightController.GetHairTriggerUp()) && heldGameObject)
         {
             applicationController.LogDroppedObject();
             ReleaseObject();
