@@ -1,16 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ControlMethod1 : MonoBehaviour
 {
     public ApplicationController applicationController;
 
-    private SteamVR_TrackedObject trackedObj;
+    private SteamVR_TrackedObject _trackedObj;
 
     private SteamVR_Controller.Device Controller
     {
-        get { return SteamVR_Controller.Input((int)trackedObj.index); }
+        get { return SteamVR_Controller.Input((int)_trackedObj.index); }
     }
 
     public float closestColliderDistance = 5000.0f;
@@ -21,7 +19,7 @@ public class ControlMethod1 : MonoBehaviour
     private void Awake()
     {
         thisCollider = GetComponent<SphereCollider>();
-        trackedObj = GetComponent<SteamVR_TrackedObject>();
+        _trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -102,7 +100,7 @@ public class ControlMethod1 : MonoBehaviour
         objectInHand = closestCollider.gameObject;
         closestCollider = null;
 
-        var joint = AddFixedJoint();
+        FixedJoint joint = AddFixedJoint();
         joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
     }
 

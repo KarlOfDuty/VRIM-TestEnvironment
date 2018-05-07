@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class BasketTrigger : MonoBehaviour
 {
-    private AudioSource sound;
+    private AudioSource _sound;
     public GameObject applicationController;
 
     // Use this for initialization
     private void Start()
     {
-        sound = GetComponent<AudioSource>();
+        _sound = GetComponent<AudioSource>();
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collider.gameObject == applicationController.GetComponent<ApplicationController>().currentCube)
+        if (other.gameObject == applicationController.GetComponent<ApplicationController>().currentCube)
         {
             applicationController.GetComponent<ApplicationController>().DeleteCurrentCube();
-            sound.Play();
+            _sound.Play();
         }
         else
         {
-            collider.gameObject.transform.position = collider.gameObject.GetComponent<CubeRespawnScript>().startPos;
+            other.gameObject.transform.position = other.gameObject.GetComponent<CubeRespawnScript>().startPos;
         }
     }
 }

@@ -408,10 +408,10 @@ namespace Valve.VR.InteractionSystem
 
 
 		//-------------------------------------------------
-		public static void AfterTimer( GameObject go, float _time, System.Action callback, bool trigger_if_destroyed_early = false )
+		public static void AfterTimer( GameObject go, float _time, System.Action callback, bool triggerIfDestroyedEarly = false )
 		{
 			AfterTimer_Component afterTimer_component = go.AddComponent<AfterTimer_Component>();
-			afterTimer_component.Init( _time, callback, trigger_if_destroyed_early );
+			afterTimer_component.Init( _time, callback, triggerIfDestroyedEarly );
 		}
 
 
@@ -696,10 +696,10 @@ namespace Valve.VR.InteractionSystem
 		private bool triggerOnEarlyDestroy = false;
 
 		//-------------------------------------------------
-		public void Init( float _time, System.Action _callback, bool earlydestroy )
+		public void Init( float _time, System.Action callback, bool earlydestroy )
 		{
 			triggerTime = _time;
-			callback = _callback;
+			this.callback = callback;
 			triggerOnEarlyDestroy = earlydestroy;
 			timerActive = true;
 			StartCoroutine( Wait() );

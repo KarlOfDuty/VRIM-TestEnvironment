@@ -1361,7 +1361,7 @@ public struct IVRRenderModels
 	internal _RenderModelHasComponent RenderModelHasComponent;
 
 	[UnmanagedFunctionPointer(CallingConvention.StdCall)]
-	internal delegate uint _GetRenderModelThumbnailURL(string pchRenderModelName, System.Text.StringBuilder pchThumbnailURL, uint unThumbnailURLLen, ref EVRRenderModelError peError);
+	internal delegate uint _GetRenderModelThumbnailURL(string pchRenderModelName, System.Text.StringBuilder pchThumbnailURL, uint unThumbnailUrlLen, ref EVRRenderModelError peError);
 	[MarshalAs(UnmanagedType.FunctionPtr)]
 	internal _GetRenderModelThumbnailURL GetRenderModelThumbnailURL;
 
@@ -3071,9 +3071,9 @@ public class CVRRenderModels
 		bool result = FnTable.RenderModelHasComponent(pchRenderModelName,pchComponentName);
 		return result;
 	}
-	public uint GetRenderModelThumbnailURL(string pchRenderModelName,System.Text.StringBuilder pchThumbnailURL,uint unThumbnailURLLen,ref EVRRenderModelError peError)
+	public uint GetRenderModelThumbnailURL(string pchRenderModelName,System.Text.StringBuilder pchThumbnailUrl,uint unThumbnailUrlLen,ref EVRRenderModelError peError)
 	{
-		uint result = FnTable.GetRenderModelThumbnailURL(pchRenderModelName,pchThumbnailURL,unThumbnailURLLen,ref peError);
+		uint result = FnTable.GetRenderModelThumbnailURL(pchRenderModelName,pchThumbnailUrl,unThumbnailUrlLen,ref peError);
 		return result;
 	}
 	public uint GetRenderModelOriginalPath(string pchRenderModelName,System.Text.StringBuilder pchOriginalPath,uint unOriginalPathLen,ref EVRRenderModelError peError)

@@ -5,7 +5,13 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - applicationController: {instanceID: 0}
+  - trackedObj1: {instanceID: 0}
+  - trackedObj2: {instanceID: 0}
+  - laserPrefab: {fileID: 1434050336281080, guid: 80eba249831c0b045b8bad5a2f6b9974,
+      type: 2}
+  - heldGameObject: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

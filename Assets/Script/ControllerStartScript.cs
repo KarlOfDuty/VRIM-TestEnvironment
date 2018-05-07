@@ -1,20 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ControllerStartScript : MonoBehaviour
 {
-    private SteamVR_TrackedObject trackedObj;
+    private SteamVR_TrackedObject _trackedObj;
     public ApplicationController applicationController;
 
     private void Awake()
     {
-        trackedObj = GetComponent<SteamVR_TrackedObject>();
+        _trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
     private SteamVR_Controller.Device Controller
     {
-        get { return SteamVR_Controller.Input((int)trackedObj.index); }
+        get { return SteamVR_Controller.Input((int)_trackedObj.index); }
     }
 
     // Update is called once per frame

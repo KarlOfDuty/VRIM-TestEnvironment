@@ -1,47 +1,45 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ControlMethod3 : MonoBehaviour
 {
     public ApplicationController applicationController;
 
-    private SteamVR_TrackedObject trackedObj;
+    private SteamVR_TrackedObject _trackedObj;
 
     private SteamVR_Controller.Device Controller
     {
-        get { return SteamVR_Controller.Input((int)trackedObj.index); }
+        get { return SteamVR_Controller.Input((int)_trackedObj.index); }
     }
 
     public GameObject laserPrefab;
-    private GameObject laser;
-    private Vector3 hitPoint;
+    private GameObject _laser;
+    private Vector3 _hitPoint;
 
-    public GameObject heldGameObject = null;
+    public GameObject heldGameObject;
 
     private void Awake()
     {
-        trackedObj = GetComponent<SteamVR_TrackedObject>();
+        _trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
     private void Start()
     {
-        laser = Instantiate(laserPrefab);
+        _laser = Instantiate(laserPrefab);
     }
 
     private void ShowLaser(RaycastHit hit)
     {
-        laser.SetActive(true);
-        laser.transform.position = Vector3.Lerp(trackedObj.transform.position, hitPoint, 0.5f);
-        laser.transform.LookAt(hitPoint);
-        laser.transform.localScale = new Vector3(laser.transform.localScale.x, laser.transform.localScale.y, hit.distance);
+        _laser.SetActive(true);
+        _laser.transform.position = Vector3.Lerp(_trackedObj.transform.position, _hitPoint, 0.5f);
+        _laser.transform.LookAt(_hitPoint);
+        _laser.transform.localScale = new Vector3(_laser.transform.localScale.x, _laser.transform.localScale.y, hit.distance);
     }
 
     private void GrabObject(GameObject obj)
     {
         heldGameObject = obj;
 
-        var joint = AddFixedJoint();
+        FixedJoint joint = AddFixedJoint();
         joint.connectedBody = obj.GetComponent<Rigidbody>();
     }
 
@@ -56,10 +54,11 @@ public class ControlMethod3 : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        //Drawing laser and picking up object
         RaycastHit hit;
-        if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100))
+        if (Physics.Raycast(_trackedObj.transform.position, transform.forward, out hit, 100))
         {
-            hitPoint = hit.point;
+            _hitPoint = hit.point;
             ShowLaser(hit);
             if (Controller.GetHairTriggerDown() && !heldGameObject && hit.collider.gameObject.GetComponent<Rigidbody>())
             {
@@ -78,10 +77,17 @@ public class ControlMethod3 : MonoBehaviour
                 applicationController.LogMissedObject(-1.0f);
             }
         }
+
+        //Releasing an object
         if (Controller.GetHairTriggerUp() && heldGameObject)
         {
             applicationController.LogDroppedObject();
             ReleaseObject();
+        }
+        else if (heldGameObject && !GetComponent<FixedJoint>())
+        {
+            FixedJoint joint = AddFixedJoint();
+            joint.connectedBody = heldGameObject.GetComponent<Rigidbody>();
         }
     }
 

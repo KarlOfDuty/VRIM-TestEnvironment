@@ -12,12 +12,12 @@ using Valve.VR;
 public static class SteamVR_Utils
 {
 	// this version does not clamp [0..1]
-	public static Quaternion Slerp(Quaternion A, Quaternion B, float t)
+	public static Quaternion Slerp(Quaternion A, Quaternion b, float t)
 	{
-		var cosom = Mathf.Clamp(A.x * B.x + A.y * B.y + A.z * B.z + A.w * B.w, -1.0f, 1.0f);
+		var cosom = Mathf.Clamp(A.x * b.x + A.y * b.y + A.z * b.z + A.w * b.w, -1.0f, 1.0f);
 		if (cosom < 0.0f)
 		{
-			B = new Quaternion(-B.x, -B.y, -B.z, -B.w);
+			b = new Quaternion(-b.x, -b.y, -b.z, -b.w);
 			cosom = -cosom;
 		}
 
@@ -37,43 +37,43 @@ public static class SteamVR_Utils
 		}
 
 		return new Quaternion(
-			sclp * A.x + sclq * B.x,
-			sclp * A.y + sclq * B.y,
-			sclp * A.z + sclq * B.z,
-			sclp * A.w + sclq * B.w);
+			sclp * A.x + sclq * b.x,
+			sclp * A.y + sclq * b.y,
+			sclp * A.z + sclq * b.z,
+			sclp * A.w + sclq * b.w);
 	}
 
-	public static Vector3 Lerp(Vector3 A, Vector3 B, float t)
+	public static Vector3 Lerp(Vector3 A, Vector3 b, float t)
 	{
 		return new Vector3(
-			Lerp(A.x, B.x, t),
-			Lerp(A.y, B.y, t),
-			Lerp(A.z, B.z, t));
+			Lerp(A.x, b.x, t),
+			Lerp(A.y, b.y, t),
+			Lerp(A.z, b.z, t));
 	}
 
-	public static float Lerp(float A, float B, float t)
+	public static float Lerp(float A, float b, float t)
 	{
-		return A + (B - A) * t;
+		return A + (b - A) * t;
 	}
 
-	public static double Lerp(double A, double B, double t)
+	public static double Lerp(double A, double b, double t)
 	{
-		return A + (B - A) * t;
+		return A + (b - A) * t;
 	}
 
-	public static float InverseLerp(Vector3 A, Vector3 B, Vector3 result)
+	public static float InverseLerp(Vector3 A, Vector3 b, Vector3 result)
 	{
-		return Vector3.Dot(result - A, B - A);
+		return Vector3.Dot(result - A, b - A);
 	}
 
-	public static float InverseLerp(float A, float B, float result)
+	public static float InverseLerp(float A, float b, float result)
 	{
-		return (result - A) / (B - A);
+		return (result - A) / (b - A);
 	}
 
-	public static double InverseLerp(double A, double B, double result)
+	public static double InverseLerp(double A, double b, double result)
 	{
-		return (result - A) / (B - A);
+		return (result - A) / (b - A);
 	}
 
 	public static float Saturate(float A)

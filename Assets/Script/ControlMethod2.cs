@@ -1,25 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ControlMethod2 : MonoBehaviour
 {
     public ApplicationController applicationController;
 
-    private SteamVR_TrackedObject trackedObj;
+    private SteamVR_TrackedObject _trackedObj;
 
     private SteamVR_Controller.Device Controller
     {
-        get { return SteamVR_Controller.Input((int)trackedObj.index); }
+        get { return SteamVR_Controller.Input((int)_trackedObj.index); }
     }
 
-    public GameObject objectInHand = null;
+    public GameObject objectInHand;
     public GameObject recentlyReleasedObject;
     public SphereCollider thisCollider;
 
     private void Awake()
     {
-        trackedObj = GetComponent<SteamVR_TrackedObject>();
+        _trackedObj = GetComponent<SteamVR_TrackedObject>();
         thisCollider = GetComponent<SphereCollider>();
     }
 
@@ -47,7 +45,7 @@ public class ControlMethod2 : MonoBehaviour
         }
         objectInHand = other.gameObject;
         objectInHand.transform.position = thisCollider.transform.TransformPoint(thisCollider.center);
-        var joint = AddFixedJoint();
+        FixedJoint joint = AddFixedJoint();
         joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
     }
 
