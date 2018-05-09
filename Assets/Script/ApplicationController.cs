@@ -11,7 +11,7 @@ public class ApplicationController : MonoBehaviour
 
     private AudioSource _completionSound;
 
-    public string logID;
+    private string _logID;
     private string _sceneName;
     public string logPath = "";
 
@@ -29,6 +29,7 @@ public class ApplicationController : MonoBehaviour
 
     private void Awake()
     {
+        _logID = "001";
         _sceneName = SceneManager.GetActiveScene().name;
     }
 
@@ -36,10 +37,10 @@ public class ApplicationController : MonoBehaviour
     private void Start()
     {
         _completionSound = GetComponent<AudioSource>();
-        Directory.CreateDirectory("Assets/Logs/Log" + logID);
-        logPath = "Assets/Logs/Log" + logID + "/" + _sceneName + ".log";
+        Directory.CreateDirectory("Assets/Logs/Log" + _logID);
+        logPath = "Assets/Logs/Log" + _logID + "/" + _sceneName + ".log";
         _sw = new StreamWriter(logPath, true);
-        WriteLineToLog("Application Started. ID: " + logID + ". Scene: " + _sceneName + ".");
+        WriteLineToLog("Application Started. ID: " + _logID + ". Scene: " + _sceneName + ".");
     }
 
     public void StartTest()
@@ -47,7 +48,7 @@ public class ApplicationController : MonoBehaviour
         if (!testStarted)
         {
             SetRandomCube();
-            WriteLineToLog("Test Started. ID: " + logID + ". Scene: " + _sceneName + ".");
+            WriteLineToLog("Test Started. ID: " + _logID + ". Scene: " + _sceneName + ".");
             testStarted = true;
         }
     }
@@ -57,7 +58,7 @@ public class ApplicationController : MonoBehaviour
     {
         if (testEnded && _sw.BaseStream != null)
         {
-            WriteLineToLog("Test Concluded. ID: " + logID + ". Scene: " + _sceneName + ". Number of correct pickups: " + _numberOfSuccessfulPickups + ". Number of wrong pickups: " + _numberOfWrongPickups + ". Number of missed pickups: " + _numberOfMissedPickups);
+            WriteLineToLog("Test Concluded. ID: " + _logID + ". Scene: " + _sceneName + ". Number of correct pickups: " + _numberOfSuccessfulPickups + ". Number of wrong pickups: " + _numberOfWrongPickups + ". Number of missed pickups: " + _numberOfMissedPickups);
             _sw.Close();
             _completionSound.PlayDelayed(1.0f);
         }
@@ -67,7 +68,7 @@ public class ApplicationController : MonoBehaviour
     {
         if (_sw.BaseStream != null)
         {
-            WriteLineToLog("Test Aborted. ID: " + logID + ". Scene: " + _sceneName + ". Number of correct pickups: " + _numberOfSuccessfulPickups + ". Number of wrong pickups: " + _numberOfWrongPickups + ". Number of missed pickups: " + _numberOfMissedPickups);
+            WriteLineToLog("Test Aborted. ID: " + _logID + ". Scene: " + _sceneName + ". Number of correct pickups: " + _numberOfSuccessfulPickups + ". Number of wrong pickups: " + _numberOfWrongPickups + ". Number of missed pickups: " + _numberOfMissedPickups);
             _sw.Dispose();
         }
     }
