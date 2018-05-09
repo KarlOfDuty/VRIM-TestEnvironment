@@ -1,0 +1,41 @@
+[5/9/2018 1:33:04 PM] (0s): Application Started. ID: 007. Scene: InteractionMethod4Large.
+[5/9/2018 1:33:05 PM] (1.268184s): Test Aborted. ID: 007. Scene: InteractionMethod4Large. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/9/2018 1:33:15 PM] (0s): Application Started. ID: 007. Scene: InteractionMethod4Large.
+[5/9/2018 1:33:19 PM] (3.92736s): Test Started. ID: 007. Scene: InteractionMethod4Large.
+[5/9/2018 1:33:20 PM] (4.988419s): User tried to pick up an object but missed. Distance to center of correct object: -1
+[5/9/2018 1:33:20 PM] (5.491173s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:21 PM] (6.54171s): User released an object.
+[5/9/2018 1:33:22 PM] (6.788889s): Cube successfully placed in target. 6.788889s since last cube successfully placed.
+[5/9/2018 1:33:22 PM] (7.52402s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:23 PM] (8.596401s): User released an object.
+[5/9/2018 1:33:24 PM] (8.855556s): Cube successfully placed in target. 2.066667s since last cube successfully placed.
+[5/9/2018 1:33:25 PM] (9.97026s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:25 PM] (10.55102s): User released an object.
+[5/9/2018 1:33:26 PM] (11.22117s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:29 PM] (13.82402s): User released an object.
+[5/9/2018 1:33:29 PM] (13.97778s): Cube successfully placed in target. 5.122223s since last cube successfully placed.
+[5/9/2018 1:33:31 PM] (16.43745s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:32 PM] (17.54445s): Cube successfully placed in target. 3.566667s since last cube successfully placed.
+[5/9/2018 1:33:40 PM] (25.02709s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:42 PM] (26.9819s): User released an object.
+[5/9/2018 1:33:43 PM] (27.68549s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:45 PM] (29.87543s): User released an object.
+[5/9/2018 1:33:45 PM] (30.03333s): Cube successfully placed in target. 12.48889s since last cube successfully placed.
+[5/9/2018 1:33:45 PM] (30.5784s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:46 PM] (30.73477s): User released an object.
+[5/9/2018 1:33:46 PM] (31.04804s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:47 PM] (32.48851s): User released an object.
+[5/9/2018 1:33:48 PM] (32.74445s): Cube successfully placed in target. 2.711111s since last cube successfully placed.
+[5/9/2018 1:33:49 PM] (33.70601s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:50 PM] (34.75598s): User released an object.
+[5/9/2018 1:33:50 PM] (35.05556s): Cube successfully placed in target. 2.311111s since last cube successfully placed.
+[5/9/2018 1:33:50 PM] (35.59361s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:51 PM] (36.55416s): User released an object.
+[5/9/2018 1:33:52 PM] (36.8s): Cube successfully placed in target. 1.744442s since last cube successfully placed.
+[5/9/2018 1:33:52 PM] (37.41524s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:54 PM] (39.50299s): User released an object.
+[5/9/2018 1:33:55 PM] (39.76667s): Cube successfully placed in target. 2.966667s since last cube successfully placed.
+[5/9/2018 1:33:55 PM] (40.41905s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 1:33:56 PM] (41.25669s): User released an object.
+[5/9/2018 1:33:56 PM] (41.48889s): Cube successfully placed in target. 1.722225s since last cube successfully placed.
+[5/9/2018 1:33:56 PM] (41.49126s): Test Concluded. ID: 007. Scene: InteractionMethod4Large. Number of correct pickups: 13. Number of wrong pickups: 0. Number of missed pickups: 1

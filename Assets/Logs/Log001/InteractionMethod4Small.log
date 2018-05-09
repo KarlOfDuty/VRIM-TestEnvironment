@@ -1,0 +1,5 @@
+[5/9/2018 10:24:11 AM] (0s): Application Started. ID: 001. Scene: InteractionMethod4Small.
+[5/9/2018 10:24:13 AM] (1.722294s): Test Started. ID: 001. Scene: InteractionMethod4Small.
+[5/9/2018 10:24:24 AM] (12.89312s): Test Aborted. ID: 001. Scene: InteractionMethod4Small. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0
+[5/9/2018 10:24:54 AM] (0s): Application Started. ID: 001. Scene: InteractionMethod4Small.
+[5/9/2018 10:24:57 AM] (2.43934s): Test Aborted. ID: 001. Scene: InteractionMethod4Small. Number of correct pickups: 0. Number of wrong pickups: 0. Number of missed pickups: 0

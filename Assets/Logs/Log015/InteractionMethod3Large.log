@@ -1,0 +1,37 @@
+[5/9/2018 4:17:22 PM] (0s): Application Started. ID: 015. Scene: InteractionMethod3Large.
+[5/9/2018 4:17:37 PM] (14.7901s): Test Started. ID: 015. Scene: InteractionMethod3Large.
+[5/9/2018 4:17:37 PM] (15.3928s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:37 PM] (15.482s): User released an object.
+[5/9/2018 4:17:38 PM] (16.26386s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:39 PM] (17.11273s): User released an object.
+[5/9/2018 4:17:39 PM] (17.4s): Cube successfully placed in target. 17.4s since last cube successfully placed.
+[5/9/2018 4:17:40 PM] (18.051s): User tried to pick up an object but missed. Distance to center of correct object: -1
+[5/9/2018 4:17:41 PM] (18.72116s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:42 PM] (20.22923s): User released an object.
+[5/9/2018 4:17:42 PM] (20.46667s): Cube successfully placed in target. 3.066668s since last cube successfully placed.
+[5/9/2018 4:17:43 PM] (21.22333s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:44 PM] (22.18889s): Cube successfully placed in target. 1.722221s since last cube successfully placed.
+[5/9/2018 4:17:44 PM] (22.19509s): User released an object.
+[5/9/2018 4:17:45 PM] (23.13325s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:47 PM] (24.90929s): User released an object.
+[5/9/2018 4:17:47 PM] (25.01111s): Cube successfully placed in target. 2.822224s since last cube successfully placed.
+[5/9/2018 4:17:48 PM] (26.10448s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:49 PM] (26.76339s): User released an object.
+[5/9/2018 4:17:49 PM] (27.11111s): Cube successfully placed in target. 2.1s since last cube successfully placed.
+[5/9/2018 4:17:50 PM] (27.74643s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:50 PM] (28.38308s): User released an object.
+[5/9/2018 4:17:50 PM] (28.5s): Cube successfully placed in target. 1.388887s since last cube successfully placed.
+[5/9/2018 4:17:51 PM] (29.10909s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:51 PM] (29.58935s): User released an object.
+[5/9/2018 4:17:52 PM] (29.76667s): Cube successfully placed in target. 1.266668s since last cube successfully placed.
+[5/9/2018 4:17:52 PM] (30.29311s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:54 PM] (32.42222s): Cube successfully placed in target. 2.655554s since last cube successfully placed.
+[5/9/2018 4:17:54 PM] (32.5046s): User released an object.
+[5/9/2018 4:17:55 PM] (33.58825s): User tried to pick up an object but missed. Distance to center of correct object: -1
+[5/9/2018 4:17:56 PM] (34.28069s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:57 PM] (34.85025s): User released an object.
+[5/9/2018 4:17:57 PM] (35.34444s): Cube successfully placed in target. 2.922222s since last cube successfully placed.
+[5/9/2018 4:17:58 PM] (35.81087s): User picked up the correct object. Distance to center of correct object: -1
+[5/9/2018 4:17:58 PM] (36.57036s): User released an object.
+[5/9/2018 4:17:59 PM] (36.72222s): Cube successfully placed in target. 1.377777s since last cube successfully placed.
+[5/9/2018 4:17:59 PM] (36.72672s): Test Concluded. ID: 015. Scene: InteractionMethod3Large. Number of correct pickups: 11. Number of wrong pickups: 0. Number of missed pickups: 2
